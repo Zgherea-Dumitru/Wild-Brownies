@@ -2,10 +2,18 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './InfoPlanets.css';
 
+import jupiter from '../assets/jupiter.jpg'
+import terre from '../assets/terre.jpg'
+
+const images = {
+    jupiter,
+    terre,
+};
+
+
 export default function InfoPlanets() {
-    const params = 'terre';
+    const params = 'jupiter';
     const [planet, setPlanet] = useState([]);
-    const [planetImg, setPlanetImg] = useState([]);
 
     useEffect(() => {
         axios
@@ -17,19 +25,19 @@ export default function InfoPlanets() {
 
 
     
-    useEffect(() => {
-        axios
-            .get('https://www.datastro.eu/api/records/1.0/search/?dataset=donnees-systeme-solaire-solar-system-data')
-            .then((response) => {
-                setPlanetImg(response.data.records)
-            })
-    }, []);
+    // useEffect(() => {
+    //     axios
+    //         .get('https://www.datastro.eu/api/records/1.0/search/?dataset=donnees-systeme-solaire-solar-system-data')
+    //         .then((response) => {
+    //             setPlanetImg(response.data.records)
+    //         })
+    // }, []);
 
     return (
         <div className="planet-box">
             <div>
                 <img
-                    src={`${planetImg?.fields?.image?.filename}`}
+                    src={images[planet.id]}
                     alt=''
                 />
             </div>
