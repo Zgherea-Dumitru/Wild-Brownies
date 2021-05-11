@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+
 .solar-system{
     min-height: 350px;
     max-height: 90vh;
@@ -8,8 +10,67 @@
     position: relative;
 }
 
+.buttons-speed{
+    position: fixed;
+    display: flex;
+    gap: 10px;
+    bottom: 40px;
+    right: 50px;
+}
+
+.orbit-speed{ 
+    cursor: pointer;
+    position: relative;
+    font-family: 'Overpass', sans-serif;
+    font-weight: bold;
+    width: 50px;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1rem;
+    border: 2px solid #f0ffff;
+    background-color: #f0ffff;
+    color: #6495ed;
+}
+
+.orbit-speed:focus, 
+.orbit-speed:hover{ 
+    background-color: #6495ed;
+    color: white;
+}
+
+.star{
+    position: fixed;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 5px 1px #fff;
+    -moz-box-shadow: 0 0 5px 1px #fff;
+    box-shadow: 0 0 5px 1px #fff;
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.star:nth-child(40n){
+    animation: lucifer 5s infinite;
+}
+
+.star:nth-child(20n){
+    animation: lucifer 7s infinite;
+}
+
+@keyframes lucifer{
+    50%{-webkit-box-shadow: 0 0 5px 4px #fff;
+        -moz-box-shadow: 0 0 5px 4px #fff;
+        box-shadow: 0 0 5px 4px #fff;
+        opacity: .8;}
+}
+
+
+
 .planet{
-    border: 1px solid rgb(240, 255, 255, 0.5);
+    border: 1px solid rgb(240, 255, 255, 0.3);
     border-radius: 50%;
     position: absolute;
     top: 0;
@@ -21,12 +82,13 @@
     margin-left: auto;
     margin-right: auto;
     background-color: rgba(0, 0, 0, 0);
+    animation: orbit infinite linear;
 }
 
 .planet:hover,
 .planet:hover .img-planet{
     cursor: pointer;
-    border: 3px solid rgb(100, 149, 237, 1);
+    border: 2px solid rgb(100, 149, 237, 1);
 }
 
 @keyframes orbit{
@@ -37,49 +99,41 @@
 .neptune{
     height: 100%;
     width: 100%;
-    animation: orbit 3300s infinite linear;
 }
 
 .uranus{
     width: 90%;
     height: 90%;
-    animation: orbit 1680s infinite linear;
 }
 
 .saturn{
     width: 80%;
     height: 80%;
-    animation: orbit 580s infinite linear;
 }
 
 .jupiter{
     width: 70%;
     height: 70%;
-    animation: orbit 240s infinite linear;
 }
 
 .mars{
     width: 60%;
     height: 60%;
-    animation: orbit 37.6438s infinite linear;
 }
 
 .earth{
     width: 50%;
     height: 50%;
-    animation: orbit 20s infinite linear;
 }
 
 .venus{
     width: 40%;
     height: 40%;
-    animation: orbit 12.3287s infinite linear;
 }
 
 .mercury{
     width: 30%;
     height: 30%;
-    animation: orbit 4.8219s infinite linear;
 }
 
 .sun{
@@ -101,6 +155,7 @@
 }
 
 .sun:hover{
+    cursor: pointer;
     border: 3px solid cornflowerblue;
 }
 
