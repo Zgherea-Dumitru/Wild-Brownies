@@ -1,7 +1,11 @@
 .App {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("https://wallpapercave.com/wp/3iv4CaH.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

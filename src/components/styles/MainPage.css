@@ -1,25 +1,25 @@
 .solar-system{
     min-height: 280px;
-    height: 50vw;
+    height: 60vw;
     min-width: 280px;
-    width: 50vw;
+    width: 60vw;
     position: relative;
 }
 
 .planet{
-    background-color:aquamarine;
     border: 3px solid azure;
     border-radius: 50%;
-    position: relative;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: orbit 100s infinite linear;
+    /* animation: orbit 100s infinite linear; */
     pointer-events: initial;
 }
 
 .planet:hover{
-    border: 3px solid #000;
+    cursor: pointer;
+    border: 3px solid cornflowerblue;
 }
 
 @keyframes orbit{
@@ -30,7 +30,7 @@
 .neptune{
     height: 100%;
     width: 100%;
-    z-index: 1;
+    z-index: 0;
 }
 
 .uranus{
@@ -85,6 +85,10 @@
     z-index: 9;
 }
 
+.sun:hover{
+    border: 3px solid cornflowerblue;
+}
+
 .img-planet{
     position: absolute;
 }
@@ -92,55 +96,56 @@
 .img-neptune{
     height: 20px;
     width: 20px;
-    bottom: -10px;
+    top: -10px;
     background-image: url("../images/neptune.svg");
 }
 
 .img-uranus{
-    background-image: url("../images/uranus.svg");
     height: 25px;
     width: 25px;
-    left: -12.5px;
+    top: -12.5px;
+    background-image: url("../images/uranus.svg");
 }
 
 .img-saturn{
-    background-image: url("../images/saturn.svg");
     height: 50px;
     width: 50px;
-    left: -25px;
+    top: -25px;
+    background-image: url("../images/saturn.svg");
 }
 
 .img-jupiter{
-    background-image: url("../images/jupiter.svg");
     height: 30px;
     width: 30px;
-    right: -15px;
+    top: -15px;
+    background-image: url("../images/jupiter.svg");
 }
 
 .img-mars{
     height: 20px;
     width: 20px;
-    bottom: -10px;
+    top: -10px;
     background-image: url("../images/mars.svg");
 }
 
 .img-earth{
     height: 20px;
     width: 20px;
-    bottom: -10px;
+    top: -10px;
     background-image: url("../images/earth.svg");
+    border: 3px solid darkblue;
 }
 
 .img-venus{
     height: 20px;
     width: 20px;
-    bottom: -10px;
+    top: -10px;
     background-image: url("../images/venus.svg");
 }
 
 .img-mercury{
     height: 20px;
     width: 20px;
-    bottom: -10px;
+    top: -10px;
     background-image: url("../images/mercury.svg");
 }
