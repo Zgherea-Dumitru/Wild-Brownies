@@ -1,25 +1,32 @@
 .solar-system{
-    min-height: 280px;
+    min-height: 350px;
+    max-height: 90vh;
+    max-width: 90vh;
     height: 60vw;
-    min-width: 280px;
+    min-width: 350px;
     width: 60vw;
     position: relative;
 }
 
 .planet{
-    border: 3px solid azure;
+    border: 1px solid rgb(240, 255, 255, 0.5);
     border-radius: 50%;
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* animation: orbit 100s infinite linear; */
-    pointer-events: initial;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0);
 }
 
-.planet:hover{
+.planet:hover,
+.planet:hover .img-planet{
     cursor: pointer;
-    border: 3px solid cornflowerblue;
+    border: 3px solid rgb(100, 149, 237, 1);
 }
 
 @keyframes orbit{
@@ -30,67 +37,82 @@
 .neptune{
     height: 100%;
     width: 100%;
-    z-index: 0;
+    animation: orbit 3300s infinite linear;
 }
 
 .uranus{
-    width: 85%;
-    height: 85%;
-    z-index: 2;
+    width: 90%;
+    height: 90%;
+    animation: orbit 1680s infinite linear;
 }
 
 .saturn{
-    width: 85%;
-    height: 85%;
-    z-index: 3;
+    width: 80%;
+    height: 80%;
+    animation: orbit 580s infinite linear;
 }
 
 .jupiter{
-    width: 80%;
-    height: 80%;
-    z-index: 4;
+    width: 70%;
+    height: 70%;
+    animation: orbit 240s infinite linear;
 }
 
 .mars{
-    width: 80%;
-    height: 80%;
-    z-index: 5;
+    width: 60%;
+    height: 60%;
+    animation: orbit 37.6438s infinite linear;
 }
 
 .earth{
-    width: 80%;
-    height: 80%;
-    z-index: 6;
+    width: 50%;
+    height: 50%;
+    animation: orbit 20s infinite linear;
 }
 
 .venus{
-    width: 70%;
-    height: 70%;
-    z-index: 7;
+    width: 40%;
+    height: 40%;
+    animation: orbit 12.3287s infinite linear;
 }
 
 .mercury{
-    width: 70%;
-    height: 70%;
-    z-index: 8;
+    width: 30%;
+    height: 30%;
+    animation: orbit 4.8219s infinite linear;
 }
 
 .sun{
-    height: 60%;
-    width: 60%;
+    position: absolute;
+    height: 15%;
+    width: 15%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
     background-image: url("../images/sun.svg");
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 50%;
-    z-index: 9;
 }
 
 .sun:hover{
     border: 3px solid cornflowerblue;
 }
 
+
+
+
 .img-planet{
     position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+    border-radius: 50%;
 }
 
 .img-neptune{
@@ -133,7 +155,6 @@
     width: 20px;
     top: -10px;
     background-image: url("../images/earth.svg");
-    border: 3px solid darkblue;
 }
 
 .img-venus{

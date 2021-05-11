@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("https://wallpapercave.com/wp/3iv4CaH.jpg");
+  background-image: radial-gradient(#1C2837, #050608);
   background-repeat: no-repeat;
   background-size: cover;
 }
