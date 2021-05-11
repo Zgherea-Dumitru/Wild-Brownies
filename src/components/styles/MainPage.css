@@ -1,0 +1,146 @@
+.solar-system{
+    min-height: 280px;
+    height: 50vw;
+    min-width: 280px;
+    width: 50vw;
+    position: relative;
+}
+
+.planet{
+    background-color:aquamarine;
+    border: 3px solid azure;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: orbit 100s infinite linear;
+    pointer-events: initial;
+}
+
+.planet:hover{
+    border: 3px solid #000;
+}
+
+@keyframes orbit{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+.neptune{
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.uranus{
+    width: 85%;
+    height: 85%;
+    z-index: 2;
+}
+
+.saturn{
+    width: 85%;
+    height: 85%;
+    z-index: 3;
+}
+
+.jupiter{
+    width: 80%;
+    height: 80%;
+    z-index: 4;
+}
+
+.mars{
+    width: 80%;
+    height: 80%;
+    z-index: 5;
+}
+
+.earth{
+    width: 80%;
+    height: 80%;
+    z-index: 6;
+}
+
+.venus{
+    width: 70%;
+    height: 70%;
+    z-index: 7;
+}
+
+.mercury{
+    width: 70%;
+    height: 70%;
+    z-index: 8;
+}
+
+.sun{
+    height: 60%;
+    width: 60%;
+    background-image: url("../images/sun.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    z-index: 9;
+}
+
+.img-planet{
+    position: absolute;
+}
+
+.img-neptune{
+    height: 20px;
+    width: 20px;
+    bottom: -10px;
+    background-image: url("../images/neptune.svg");
+}
+
+.img-uranus{
+    background-image: url("../images/uranus.svg");
+    height: 25px;
+    width: 25px;
+    left: -12.5px;
+}
+
+.img-saturn{
+    background-image: url("../images/saturn.svg");
+    height: 50px;
+    width: 50px;
+    left: -25px;
+}
+
+.img-jupiter{
+    background-image: url("../images/jupiter.svg");
+    height: 30px;
+    width: 30px;
+    right: -15px;
+}
+
+.img-mars{
+    height: 20px;
+    width: 20px;
+    bottom: -10px;
+    background-image: url("../images/mars.svg");
+}
+
+.img-earth{
+    height: 20px;
+    width: 20px;
+    bottom: -10px;
+    background-image: url("../images/earth.svg");
+}
+
+.img-venus{
+    height: 20px;
+    width: 20px;
+    bottom: -10px;
+    background-image: url("../images/venus.svg");
+}
+
+.img-mercury{
+    height: 20px;
+    width: 20px;
+    bottom: -10px;
+    background-image: url("../images/mercury.svg");
+}
