@@ -30,13 +30,13 @@ const images = {
     venus
 };
 
-export default function InfoPlanets() {
-    const params = 'jupiter';
+export default function InfoPlanets(props) {
+    const params = props.match.params;
     const [planet, setPlanet] = useState([]);
 
     useEffect(() => {
         axios
-            .get(`https://api.le-systeme-solaire.net/rest/bodies/${params}`)
+            .get(`https://api.le-systeme-solaire.net/rest/bodies/${params.id}`)
             .then((response) => {
                 setPlanet(response.data)
             })
