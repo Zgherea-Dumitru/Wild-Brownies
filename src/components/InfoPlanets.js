@@ -2,14 +2,32 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './InfoPlanets.css';
 
+//import icons and pictures of planets
+import angle from '../assets/angle.svg'
+import orbite from '../assets/orbite.svg'
+import satellites from '../assets/satellites.svg'
+import tour from '../assets/tour.svg'
 import jupiter from '../assets/jupiter.jpg'
+import mars from '../assets/mars.jpg'
+import mercure from '../assets/mercure.jpg'
+import neptune from '../assets/neptune.jpg'
+import saturne from '../assets/saturne.jpg'
+import soleil from '../assets/soleil.jpg'
 import terre from '../assets/terre.jpg'
+import uranus from '../assets/uranus.jpg'
+import venus from '../assets/venus.jpg'
 
 const images = {
     jupiter,
+    mars,
+    mercure,
+    neptune,
+    saturne,
+    soleil,
     terre,
+    uranus,
+    venus
 };
-
 
 export default function InfoPlanets() {
     const params = 'jupiter';
@@ -23,35 +41,42 @@ export default function InfoPlanets() {
             })
     }, []);
 
-
-    
-    // useEffect(() => {
-    //     axios
-    //         .get('https://www.datastro.eu/api/records/1.0/search/?dataset=donnees-systeme-solaire-solar-system-data')
-    //         .then((response) => {
-    //             setPlanetImg(response.data.records)
-    //         })
-    // }, []);
-
     return (
         <div className="planet-box">
             <div>
                 <img
                     src={images[planet.id]}
-                    alt=''
+                    alt="planet"
+                    className="planet-img"
                 />
             </div>
             <div>
-                <h2 className="planet-text">Nom : {planet.name}</h2>
-                <p className="planet-text">Inclinaison : {planet.axialTilt}</p>
-                <p className="planet-text">Période de révolution autour du Soleil : {planet.sideralOrbit}</p>
-                <p className="planet-text">Période de rotation sur lui-même : {planet.sideralRotation}</p>
-                <p className="planet-text">Découverte par : {planet.discoveredBy}</p>
-                <p className="planet-text">Découverte le : {planet.discoveryDate}</p>
-                {
-                    //<p className="planet-text">Satellites : {planet.moons.map(element => element.moon)}</p>
-                }
-                <p className="planet-text">identifiant : {planet.id}</p>
+                <h2 className="planet-text planet-title">{planet.name}</h2>
+                <div className="info-box">
+                    <img src={angle} className="icones" />
+                    <p className="planet-text">Inclinaison de {planet.axialTilt} degrés</p>
+                </div>
+                <div className="info-box">
+                    <img src={orbite} className="icones" />
+                    <p className="planet-text">{planet.name} prend {planet.sideralOrbit} jours pour faire le tour de son orbite.</p>
+                </div>
+                <div className="info-box">
+                    <img src={tour} className="icones" />
+                    <p className="planet-text"> Il lui faut {planet.sideralRotation} jours pour faire un tour complet sur elle-même.</p>
+                </div>
+                <div className={planet.moons ? 'info-box' : 'hide-box'}>
+                    <img src={satellites} className="icones" />
+                    <p className="planet-text"> Satellites :
+                        {planet.moons
+                            ? planet.moons.map(element => {
+                                return (
+                                    <li>{element.moon}</li>
+                                )
+                            }).slice(0,5)
+                            : null
+                        }
+                    </p>
+                </div>
             </div>
         </div>
     )
