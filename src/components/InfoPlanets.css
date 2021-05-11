@@ -6,11 +6,11 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: rgb(100, 149, 237);
-    border-radius: 5px;
+    border-style: solid;    
+    border-radius: 20px;
+    box-shadow: 0 0 50px 50px black;
     background-color: black;
+    margin: auto;
 }
 
 @media screen and (max-width: 480px) {
@@ -46,7 +46,7 @@
 .planet-text {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     width: 300px;
     color: white;
     font-family: 'Noto Sans JP', sans-serif;
@@ -64,3 +64,7 @@
 .hide-box {
     display: none;
 }
+
+.close {
+    color: white;
+  }

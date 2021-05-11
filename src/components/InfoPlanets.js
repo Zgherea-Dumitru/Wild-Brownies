@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './InfoPlanets.css';
 
@@ -43,6 +44,10 @@ export default function InfoPlanets() {
 
     return (
         <div className="planet-box">
+            <div className="close">
+                <Link to = '/'>&#10005;</Link>
+            </div>
+
             <div>
                 <img
                     src={images[planet.id]}
@@ -53,26 +58,26 @@ export default function InfoPlanets() {
             <div>
                 <h2 className="planet-text planet-title">{planet.name}</h2>
                 <div className="info-box">
-                    <img src={angle} className="icones" />
+                    <img src={angle} className="icones" alt="axis"/>
                     <p className="planet-text">Inclinaison de {planet.axialTilt} degrés</p>
                 </div>
                 <div className="info-box">
-                    <img src={orbite} className="icones" />
+                    <img src={orbite} className="icones" alt="orbite"/>
                     <p className="planet-text">{planet.name} prend {planet.sideralOrbit} jours pour faire le tour de son orbite.</p>
                 </div>
                 <div className="info-box">
-                    <img src={tour} className="icones" />
+                    <img src={tour} className="icones" alt="turn"/>
                     <p className="planet-text"> Il lui faut {planet.sideralRotation} jours pour faire un tour complet sur elle-même.</p>
                 </div>
                 <div className={planet.moons ? 'info-box' : 'hide-box'}>
-                    <img src={satellites} className="icones" />
+                    <img src={satellites} className="icones" alt="satellite"/>
                     <p className="planet-text"> Satellites :
                         {planet.moons
                             ? planet.moons.map(element => {
                                 return (
                                     <li>{element.moon}</li>
                                 )
-                            }).slice(0,5)
+                            }).slice(0, 5)
                             : null
                         }
                     </p>
