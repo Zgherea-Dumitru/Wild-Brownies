@@ -259,8 +259,7 @@
 }
 
 .info{
-    position: fixed;
-    top: 200%;
+    visibility: hidden;
 }
 
 .info-active{

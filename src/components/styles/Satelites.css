@@ -1,0 +1,39 @@
+.satelites{
+    color: white;
+    width: 90px;
+    display: flex;
+    gap: 10px;
+    position: fixed;
+    top: 10%;
+    left: 58%;
+    animation: moons 2s linear;
+}
+
+@keyframes moons {
+    0%{top: -10%;}
+    50%{top: 0%;}
+    to{top: 10%;}
+}
+
+.satelite-img{
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/moon.svg);
+    cursor: pointer;
+}
+
+.satelite-img:focus{
+    stroke: 2px solid blueviolet;
+}
+
+.satelite-img:nth-child(2n){
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+}
+
+.satelite-img:nth-child(3n){
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+}

@@ -8,39 +8,14 @@ import gravity from '../assets/gravity.svg'
 import orbite from '../assets/orbite.svg'
 import satellites from '../assets/satellites.svg'
 import tour from '../assets/tour.svg'
-import jupiter from '../assets/jupiter.jpg'
-import mars from '../assets/mars.jpg'
-import mercure from '../assets/mercure.jpg'
-import neptune from '../assets/neptune.jpg'
-import saturne from '../assets/saturne.jpg'
-import soleil from '../assets/soleil.jpg'
-import terre from '../assets/terre.jpg'
-import uranus from '../assets/uranus.jpg'
-import venus from '../assets/venus.jpg'
-
-const images = {
-    jupiter,
-    mars,
-    mercure,
-    neptune,
-    saturne,
-    soleil,
-    terre,
-    uranus,
-    venus
-};
 
 export default function InfoPlanets({ setPlanet, planetName }) {
     const [planetInfo, setPlanetInfo] = useState([]);
 
     useEffect(() => {
-        console.log(planetName);
         axios
-            .get(`https://api.le-systeme-solaire.net/rest/bodies/${planetName}`)
-            .then((response) => {
-                setPlanetInfo(response.data);
-                console.log(response.data);
-            })
+            .get(`https://api.le-systeme-solaire.net/rest/bodies/${planetName.split(" ")[0]}`)
+            .then((response) => setPlanetInfo(response.data))
     }, [planetName]);
 
     return (
