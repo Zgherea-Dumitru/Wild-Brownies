@@ -8,6 +8,11 @@
     left: 58%;
     animation: moons 2s linear;
 }
+@media screen and (max-width : 700px){
+    .satelites{
+        visibility: hidden;
+    }
+}
 
 @keyframes moons {
     0%{top: -10%;}
@@ -22,8 +27,10 @@
     cursor: pointer;
 }
 
+.satelite-img:hover,
 .satelite-img:focus{
-    stroke: 2px solid blueviolet;
+    border: 3px solid rgb(100, 149, 237);
+    border-radius: 50%;
 }
 
 .satelite-img:nth-child(2n){

@@ -15,16 +15,17 @@
     position: relative;
 }
 
+@keyframes textPop {
+    from{font-size: .1rem;}
+    to{font-size: initial;}
+}
+
 @media screen and (max-width: 480px) {
     .planet-box {
         flex-wrap: wrap;
         margin-left: auto;
         margin-right: auto;
     }
-}
-
-.planet-img {
-    width: 300px;
 }
 
 .info-box {
@@ -57,10 +58,13 @@
     padding-left: 10px;
     margin-top: auto;
     margin-bottom: auto;
+    animation: textPop .1s linear;
 }
 
+
 .planet-title {
-    font-size: 24pt;
+    font-size: 2rem;
+    animation: textPop .1s linear;
 }
 
 .hide-box {
@@ -79,3 +83,4 @@
 .close:hover{
     color: rgb(100, 149, 237);
 }
+

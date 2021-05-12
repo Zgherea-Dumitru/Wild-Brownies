@@ -25,7 +25,7 @@ export default function Satelites({ setPlanet, planetName }) {
             {planetSat.moons !== null && planetSat.moons !== undefined
                 ? planetSat.moons.filter((e, i) => i < 3).map(e => {
                     return (
-                        <div onClick={() => setPlanet(handleChangeStelite(e.moon) + " " + planetName)} style={{ animationDuration: "3s" }} className="satelite-img"></div>
+                        <div onClick={() => setPlanet(handleChangeStelite(e.moon) + " " + planetName)} className="satelite-img"></div>
                     )
                 })
                 : null
