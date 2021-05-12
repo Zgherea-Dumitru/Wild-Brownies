@@ -1,5 +1,5 @@
 import InfoPlanets from "./InfoPlanets";
-
+import { Link, Route, Switch } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import "./styles/MainPage.css";
 
@@ -18,16 +18,14 @@ export default function MainPage() {
         setStarsPositionn(tempA);
     }, [])
 
-    useEffect(() => {
-        console.log(planet);
-    }, [planet])
+
 
     return (
         <section className="solar-system">
             {starsPositionn.map(e => <div style={{ top: `${e[0]}%`, left: `${e[1]}%` }} className="star"></div>)}
             <div className="star"></div>
-            <div className={planet !== "" ? " neptune orbit-active" : "planet neptune"} style={{ animationDuration: `${3300 / speed}s` }} onClick={() => setPlanet("neptune")}>
-                <div className={planet === "neptune" ? "img-planet img-neptune clicked" : "img-planet img-neptune"}></div></div>
+            <Link to="/planets" className={planet !== "" ? " neptune orbit-active" : "planet neptune"} style={{ animationDuration: `${3300 / speed}s` }} onClick={() => setPlanet("neptune")}>
+                <div className={planet === "neptune" ? "img-planet img-neptune clicked" : "img-planet img-neptune"}></div></Link>
 
             <div className={planet !== "" ? "uranus orbit-active" : "planet uranus"} style={{ animationDuration: `${1680 / speed}s` }} onClick={() => setPlanet("uranus")}>
                 <div className={planet === "uranus" ? "img-planet img-uranus clicked" : "img-planet img-uranus"}></div></div>
@@ -52,7 +50,9 @@ export default function MainPage() {
 
             <div className={planet !== "" ? "sun sun-active" : "sun"}></div>
 
-            <div className={planet !== "" ? "info-active" : "info"}><InfoPlanets setPlanet={setPlanet} /></div>
+            <div className={planet !== "" ? "info-active" : "info"}>
+                <InfoPlanets setPlanet={setPlanet} planetName={planet} />
+            </div>
 
             <div className={planet !== "" ? "buttons-speed-hidden" : "buttons-speed"} >
                 <button className="orbit-speed" onClick={() => setSpeed(1)} >x1</button>

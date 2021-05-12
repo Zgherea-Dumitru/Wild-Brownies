@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './InfoPlanets.css';
 
@@ -31,19 +30,19 @@ const images = {
     venus
 };
 
-export default function InfoPlanets({ setPlanet }) {
-    //const params = props.match.params;
+export default function InfoPlanets({ setPlanet, planetName }) {
     const [planetInfo, setPlanetInfo] = useState([]);
 
     useEffect(() => {
+        console.log(planetName);
         axios
-            .get(`https://api.le-systeme-solaire.net/rest/bodies/jupiter`)
+            .get(`https://api.le-systeme-solaire.net/rest/bodies/${planetName}`)
             .then((response) => {
-                setPlanetInfo(response.data)
+                setPlanetInfo(response.data);
+                console.log(response.data);
             })
-    }, []);
+    }, [planetName]);
 
-    //&#10005;
     return (
         <div className="planet-box">
             <div className="planet-info-box">
