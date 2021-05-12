@@ -1,0 +1,11 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient(#1C2837, #050608);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

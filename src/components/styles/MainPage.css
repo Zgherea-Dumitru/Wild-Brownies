@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+
+.solar-system{
+    min-height: 350px;
+    max-height: 90vh;
+    max-width: 90vh;
+    height: 60vw;
+    min-width: 350px;
+    width: 60vw;
+    position: relative;
+}
+
+.buttons-speed{
+    position: fixed;
+    display: flex;
+    gap: 10px;
+    bottom: 40px;
+    right: 50px;
+}
+
+.orbit-speed{ 
+    cursor: pointer;
+    position: relative;
+    font-family: 'Overpass', sans-serif;
+    font-weight: bold;
+    width: 50px;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1rem;
+    border: 2px solid #f0ffff;
+    background-color: #f0ffff;
+    color: #6495ed;
+}
+
+.orbit-speed:focus, 
+.orbit-speed:hover{ 
+    background-color: #6495ed;
+    color: white;
+}
+
+.star{
+    position: fixed;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 5px 1px #fff;
+    -moz-box-shadow: 0 0 5px 1px #fff;
+    box-shadow: 0 0 5px 1px #fff;
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.star:nth-child(40n){
+    animation: lucifer 5s infinite;
+}
+
+.star:nth-child(20n){
+    animation: lucifer 7s infinite;
+}
+
+@keyframes lucifer{
+    50%{-webkit-box-shadow: 0 0 5px 4px #fff;
+        -moz-box-shadow: 0 0 5px 4px #fff;
+        box-shadow: 0 0 5px 4px #fff;
+        opacity: .8;}
+}
+
+.planet{
+    border: 1px solid rgb(240, 255, 255, 0.3);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0);
+    animation: orbit infinite linear;
+}
+
+.planet:hover,
+.planet:hover .img-planet{
+    cursor: pointer;
+    border: 2px solid rgb(100, 149, 237, 1);
+}
+
+@keyframes orbit{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+.neptune{
+    height: 100%;
+    width: 100%;
+}
+
+.uranus{
+    width: 90%;
+    height: 90%;
+}
+
+.saturn{
+    width: 80%;
+    height: 80%;
+}
+
+.jupiter{
+    width: 70%;
+    height: 70%;
+}
+
+.mars{
+    width: 60%;
+    height: 60%;
+}
+
+.earth{
+    width: 50%;
+    height: 50%;
+}
+
+.venus{
+    width: 40%;
+    height: 40%;
+}
+
+.mercury{
+    width: 30%;
+    height: 30%;
+}
+
+.sun{
+    position: absolute;
+    height: 15%;
+    width: 15%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url("../images/sun.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+
+
+
+.img-planet{
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+}
+
+.img-neptune{
+    height: 20px;
+    width: 20px;
+    top: -10px;
+    background-image: url("../images/neptune.svg");
+}
+
+.img-uranus{
+    height: 25px;
+    width: 25px;
+    top: -12.5px;
+    background-image: url("../images/uranus.svg");
+}
+
+.img-saturn{
+    height: 50px;
+    width: 50px;
+    top: -25px;
+    background-image: url("../images/saturn.svg");
+}
+
+.img-jupiter{
+    height: 30px;
+    width: 30px;
+    top: -15px;
+    background-image: url("../images/jupiter.svg");
+}
+
+.img-mars{
+    height: 20px;
+    width: 20px;
+    top: -10px;
+    background-image: url("../images/mars.svg");
+}
+
+.img-earth{
+    height: 20px;
+    width: 20px;
+    top: -10px;
+    background-image: url("../images/earth.svg");
+}
+
+.img-venus{
+    height: 20px;
+    width: 20px;
+    top: -10px;
+    background-image: url("../images/venus.svg");
+}
+
+.img-mercury{
+    height: 20px;
+    width: 20px;
+    top: -10px;
+    background-image: url("../images/mercury.svg");
+}
+
+.orbit-active{
+    border: 1px solid rgb(0, 0, 0, 0);
+}
+
+.orbit-active:hover{
+    border: 1px solid rgb(0, 0, 0, 0);
+}
+
+.sun-active{
+    opacity: 0;
+}
+
+.orbit-active div:not(.clicked){
+    opacity: 0;
+}
+
+.clicked{
+    transition: all 10s;
+    position: fixed;
+    z-index: 10;
+    top: 10%;
+    margin-top: 0px;
+    animation: planetSelected 2s ease-in-out;
+    height: 20vw; 
+    max-height: 300px;
+    min-height: 100px;
+    width: 20vw;
+    max-width: 300px;
+    min-width: 100px;
+}
+
+@keyframes planetSelected {
+    from{top: 50%; height: 30px; width: 30px;}
+    50%{top: 90%;}
+    100%{top: 10%; height: 20vw; width: 20vw;}
+}
