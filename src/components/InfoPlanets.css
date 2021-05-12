@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+
+.planet-box {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-style: solid;    
+    border-radius: 20px;
+    box-shadow: 0 0 50px 50px black;
+    background-color: black;
+    margin: auto;
+}
+
+@media screen and (max-width: 480px) {
+    .planet-box {
+        flex-wrap: wrap;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.planet-img {
+    width: 300px;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 20px;
+}
+
+.icones {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border-style: solid;
+    border-color:rgb(100, 149, 237);
+    border-radius: 5px;
+    border-width: 2px;
+    background-color: beige;
+}
+
+.planet-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 300px;
+    color: white;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12pt;
+    text-align: left;
+    padding-left: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.planet-title {
+    font-size: 24pt;
+}
+
+.hide-box {
+    display: none;
+}
+
+.close {
+    color: white;
+  }
