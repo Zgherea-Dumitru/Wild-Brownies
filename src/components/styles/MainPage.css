@@ -67,8 +67,6 @@
         opacity: .8;}
 }
 
-
-
 .planet{
     border: 1px solid rgb(240, 255, 255, 0.3);
     border-radius: 50%;
@@ -154,20 +152,16 @@
     border-radius: 50%;
 }
 
-.sun:hover{
-    cursor: pointer;
-    border: 3px solid cornflowerblue;
-}
-
 
 
 
 .img-planet{
-    position: absolute;
+    position: relative;
     left: 0;
     right: 0;
     margin: 0px auto;
     border-radius: 50%;
+    background-repeat: no-repeat;
 }
 
 .img-neptune{
@@ -224,4 +218,41 @@
     width: 20px;
     top: -10px;
     background-image: url("../images/mercury.svg");
+}
+
+.orbit-active{
+    border: 1px solid rgb(0, 0, 0, 0);
+}
+
+.orbit-active:hover{
+    border: 1px solid rgb(0, 0, 0, 0);
+}
+
+.sun-active{
+    opacity: 0;
+}
+
+.orbit-active div:not(.clicked){
+    opacity: 0;
+}
+
+.clicked{
+    transition: all 10s;
+    position: fixed;
+    z-index: 10;
+    top: 10%;
+    margin-top: 0px;
+    animation: planetSelected 2s ease-in-out;
+    height: 20vw; 
+    max-height: 300px;
+    min-height: 100px;
+    width: 20vw;
+    max-width: 300px;
+    min-width: 100px;
+}
+
+@keyframes planetSelected {
+    from{top: 50%; height: 30px; width: 30px;}
+    50%{top: 90%;}
+    100%{top: 10%; height: 20vw; width: 20vw;}
 }
