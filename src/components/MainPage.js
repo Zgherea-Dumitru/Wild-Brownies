@@ -48,7 +48,8 @@ export default function MainPage() {
             <div className={planet !== "" ? " mercury orbit-active" : "planet mercury"} style={{ animationDuration: `${4.8219 / speed}s` }} onClick={() => setPlanet("mercury")}>
                 <div className={planet === "mercury" ? "img-planet img-mercury clicked" : "img-planet img-mercury"}></div></div>
 
-            <div className={planet !== "" ? "sun sun-active" : "sun"}></div>
+            <div className={planet !== "" ? "sun orbit-active" : "planet sun"} onClick={() => setPlanet("sun")}>
+                <span className={planet === "sun" ? "img-planet img-sun clicked" : "img-planet img-sun"}></span></div>
 
             <div className={planet !== "" ? "info-active" : "info"}>
                 <InfoPlanets setPlanet={setPlanet} planetName={planet} />

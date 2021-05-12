@@ -218,16 +218,19 @@
     background-image: url("../images/mercury.svg");
 }
 
+.img-sun{
+    height: 50px;
+    width: 50px;
+    top: -25px;
+    background-image: url("../images/sun.svg");
+}
+
 .orbit-active{
     border: 1px solid rgb(0, 0, 0, 0);
 }
 
 .orbit-active:hover{
     border: 1px solid rgb(0, 0, 0, 0);
-}
-
-.sun-active{
-    opacity: 0;
 }
 
 .orbit-active div:not(.clicked){
