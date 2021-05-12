@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
 
 .planet-box {
     height: fit-content;
@@ -8,9 +8,11 @@
     padding: 10px;
     border-style: solid;    
     border-radius: 20px;
-    box-shadow: 0 0 50px 50px black;
-    background-color: black;
+    border-color: #1c212c;
+    box-shadow: 0 0 50px 50px #1c212c;
+    background-color: #1c212c;
     margin: auto;
+    position: relative;
 }
 
 @media screen and (max-width: 480px) {
@@ -33,8 +35,8 @@
 }
 
 .icones {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     padding: 5px;
     border-style: solid;
     border-color:rgb(100, 149, 237);
@@ -49,8 +51,8 @@
     align-items: flex-start;
     width: 300px;
     color: white;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 12pt;
+    font-family: 'Overpass', sans-serif;
+    font-size: .8rem;
     text-align: left;
     padding-left: 10px;
     margin-top: auto;
@@ -67,4 +69,13 @@
 
 .close {
     color: white;
-  }
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    cursor: pointer;
+    font-size: 1.8rem;
+}
+
+.close:hover{
+    color: rgb(100, 149, 237);
+}

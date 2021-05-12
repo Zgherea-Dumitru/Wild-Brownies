@@ -5,6 +5,7 @@ import './InfoPlanets.css';
 
 //import icons and pictures of planets
 import angle from '../assets/angle.svg'
+import gravity from '../assets/gravity.svg'
 import orbite from '../assets/orbite.svg'
 import satellites from '../assets/satellites.svg'
 import tour from '../assets/tour.svg'
@@ -30,50 +31,41 @@ const images = {
     venus
 };
 
-export default function InfoPlanets(props) {
-    const params = props.match.params;
-    const [planet, setPlanet] = useState([]);
+export default function InfoPlanets({ setPlanet }) {
+    //const params = props.match.params;
+    const [planetInfo, setPlanetInfo] = useState([]);
 
     useEffect(() => {
         axios
-            .get(`https://api.le-systeme-solaire.net/rest/bodies/${params.id}`)
+            .get(`https://api.le-systeme-solaire.net/rest/bodies/jupiter`)
             .then((response) => {
-                setPlanet(response.data)
+                setPlanetInfo(response.data)
             })
     }, []);
 
+    //&#10005;
     return (
         <div className="planet-box">
-            <div className="close">
-                <Link to = '/'>&#10005;</Link>
-            </div>
-
-            <div>
-                <img
-                    src={images[planet.id]}
-                    alt="planet"
-                    className="planet-img"
-                />
-            </div>
-            <div>
-                <h2 className="planet-text planet-title">{planet.name}</h2>
+            <div className="planet-info-box">
+                <div className="close" onClick={() => setPlanet("")}>&#x2716;</div>
+                <h2 className="planet-text planet-title">{planetInfo.name}</h2>
                 <div className="info-box">
-                    <img src={angle} className="icones" alt="axis"/>
-                    <p className="planet-text">Inclinaison de {planet.axialTilt} degrés</p>
+                    <img src={angle} className="icones" alt="axis" />
+                    <p className="planet-text">Inclinaison de {planetInfo.axialTilt} degrés</p>
                 </div>
                 <div className="info-box">
-                    <img src={orbite} className="icones" alt="orbite"/>
-                    <p className="planet-text">{planet.name} prend {planet.sideralOrbit} jours pour faire le tour de son orbite.</p>
+                    <img src={orbite} className="icones" alt="orbite" />
+                    <p className="planet-text">{planetInfo.name} prend {planetInfo.sideralOrbit} jours pour faire le tour de son orbite.</p>
                 </div>
                 <div className="info-box">
-                    <img src={tour} className="icones" alt="turn"/>
-                    <p className="planet-text"> Il lui faut {planet.sideralRotation} jours pour faire un tour complet sur elle-même.</p>
+                    <img src={tour} className="icones" alt="turn" />
+                    <p className="planet-text"> Il lui faut {planetInfo.sideralRotation} jours pour faire un tour complet sur elle-même.</p>
                 </div>
-                <div className={planet.moons ? 'info-box' : 'hide-box'}>
-                    <img src={satellites} className="icones" alt="satellite"/>
+                <div className={planetInfo.moons ? 'info-box' : 'hide-box'}>
+                    <img src={satellites} className="icones" alt="satellite" />
                     <p className="planet-text"> Satellites :
-                        {planet.moons
-                            ? planet.moons.map(element => {
+                        {planetInfo.moons
+                            ? planetInfo.moons.map(element => {
                                 return (
                                     <li>{element.moon}</li>
                                 )
@@ -81,6 +73,10 @@ export default function InfoPlanets(props) {
                             : null
                         }
                     </p>
+                </div>
+                <div className="info-box">
+                    <img src={gravity} className="icones" alt="gravity" />
+                    <p className="planet-text"> Il a une force gravitationnelle de {planetInfo.gravity} N.</p>
                 </div>
             </div>
         </div>

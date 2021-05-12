@@ -1,4 +1,4 @@
-import Planet from "./Planet";
+import InfoPlanets from "./InfoPlanets";
 
 import { useState, useEffect } from "react";
 import "./styles/MainPage.css";
@@ -52,14 +52,13 @@ export default function MainPage() {
 
             <div className={planet !== "" ? "sun sun-active" : "sun"}></div>
 
-            <div><Planet /></div>
+            <div className={planet !== "" ? "info-active" : "info"}><InfoPlanets setPlanet={setPlanet} /></div>
 
-            <div className="buttons-speed">
+            <div className={planet !== "" ? "buttons-speed-hidden" : "buttons-speed"} >
                 <button className="orbit-speed" onClick={() => setSpeed(1)} >x1</button>
                 <button className="orbit-speed" onClick={() => setSpeed(5)} >x5</button>
                 <button className="orbit-speed" onClick={() => setSpeed(10)}>x10</button>
                 <button className="orbit-speed" onClick={() => setSpeed(100)}>x100</button>
-                <button className="orbit-speed" onClick={() => setPlanet("")}>clean</button>
             </div>
         </section>
     )
