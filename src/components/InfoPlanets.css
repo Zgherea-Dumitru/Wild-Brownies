@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+
+.planet-box {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-style: solid;    
+    border-radius: 20px;
+    border-color: #1c212c;
+    box-shadow: 0 0 50px 50px #1c212c;
+    background-color: #1c212c;
+    margin: auto;
+    position: relative;
+}
+
+@keyframes textPop {
+    from{font-size: .1rem;}
+    to{font-size: initial;}
+}
+
+@media screen and (max-width: 480px) {
+    .planet-box {
+        flex-wrap: wrap;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.info-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 20px;
+}
+
+.icones {
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    border-style: solid;
+    border-color:rgb(100, 149, 237);
+    border-radius: 5px;
+    border-width: 2px;
+    background-color: beige;
+}
+
+.planet-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 300px;
+    color: white;
+    font-family: 'Overpass', sans-serif;
+    font-size: .8rem;
+    text-align: left;
+    padding-left: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    animation: textPop .1s linear;
+}
+
+
+.planet-title {
+    font-size: 2rem;
+    animation: textPop .1s linear;
+}
+
+.hide-box {
+    display: none;
+}
+
+.close {
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    cursor: pointer;
+    font-size: 1.8rem;
+}
+
+.close:hover{
+    color: rgb(100, 149, 237);
+}
+
